@@ -59,7 +59,7 @@ const AboutSection = () => {
     return (
         <section className="text-white" id="about">
             <div className="gap-8 items-center py-8 px-4 xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-16">
-                <Image src="/images/pc1.jpg" width={500} height={500} />
+                <Image src="/images/pc1.jpg" width={500} height={500} alt="pcimage" />
                 <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
                     <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
                     <p className="text-white texxt-base md:text-lg">
@@ -69,14 +69,14 @@ const AboutSection = () => {
             Sequelize, HTML, CSS, and Git. I am a quick learner and I am always
             looking to expand my knowledge and skill set. I am a team player and
             I am excited to work with others to create amazing applications. */}
-                        Hello! I'm currently a third-year Computer Science student,
+                        Hello! I&apos;m currently a third-year Computer Science student,
                         and my journey in the realm of software development is driven by
                         a passion for turning theoretical knowledge into practical solutions.
                         Proficient in JAVA, Javascript. I specialize in React.js for crafting dynamic and responsive user interfaces,
                         and I have hands-on experience with the MERN stack for full-stack development.
                         My skills extend to the DevOps realm, where I work with Docker, Ansible, Jenkins, and AWS cloud services to deploy scalable and efficient applications.
-                        Eager to make a positive impact, I'm continuously evolving and committed to expanding my skills to contribute meaningfully to the world of technology.
-                        Let's collaborate and create something extraordinary!
+                        Eager to make a positive impact, I&apos;m continuously evolving and committed to expanding my skills to contribute meaningfully to the world of technology.
+                        Let&apos;s collaborate and create something extraordinary!
                     </p>
                     <div className="flex flex-row justify-start mt-8 gap-4">
                         <TabButton

@@ -22,7 +22,7 @@ const HeroSection = () => {
         >
           <h1 className="text-white max-w-2xl mb-4 lg:text-6xl text-4xl font-extrabold">
             <span className="text-transparent text-6xl bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
-              Hello, I'm{" "}
+              Hello, I&apos;m{" "}
             </span>{" "}
             <br></br>
             <TypeAnimation
@@ -41,9 +41,8 @@ const HeroSection = () => {
               repeat={Infinity}
             />
           </h1>
-          // ...
           <p className="text-[#ADB7BE] mb-6 textl-lg lg:text-xl">
-            Hi, I'm Rithend – a passionate Full Stack Developer, Cloud Enthusiast, and UI/UX Designer. I thrive on turning ideas into innovative digital solutions. With a strong background in web development and a keen interest in cloud technologies, I bring creativity and technical expertise to every project. Let's collaborate and bring your ideas to life!
+            Hi, I&apos;m Rithend – a passionate Full Stack Developer, Cloud Enthusiast, and UI/UX Designer. I thrive on turning ideas into innovative digital solutions. With a strong background in web development and a keen interest in cloud technologies, I bring creativity and technical expertise to every project. Let&apos;s collaborate and bring your ideas to life!
           </p>
 
           <div>
