@@ -11,6 +11,8 @@ const projectsData = [
         description: "Prompter is an AI prompting tool for modern world to discover, create and share creative prompts. Built with NextJs 13",
         image: "/images/projects/Prompter.png",
         tag: ["All", "Web", "nextjs"],
+        githubUrl: "https://github.com/RithendSushanth/Prompter",
+        deployedUrl: "https://prompter-7g01ve2py-rithend-sushanths-projects.vercel.app/",
     },
     {
         id: 2,
@@ -18,6 +20,8 @@ const projectsData = [
         description: "This Web Application is is made when i was learning about NextJs NextAuth Functionalities and NodeMailer for Email Authentication. I have used MongoDB for data storage.",
         image: "/images/projects/Authentication.png",
         tag: ["All", "Web", "NEXTJS"],
+        githubUrl: "https://github.com/RithendSushanth/Next-Auth",
+        deployedUrl: "https://next-auth-pied-xi.vercel.app/",
     },
     {
         id: 3,
@@ -25,6 +29,8 @@ const projectsData = [
         description: "This is my personal Portfolio Website",
         image: "/images/projects/Portfolio.png",
         tag: ["All", "Web", "NEXTJS"],
+        githubUrl: "https://github.com/RithendSushanth/portfolio",
+        deployedUrl: "https://portfolio-rithend-sushanths-projects.vercel.app/",
     },
     {
         id: 4,
@@ -32,6 +38,8 @@ const projectsData = [
         description: "iNotebook is an open-source web application for managing your notes. It is built with React.js and Node.js. It is designed to be user-friendly and easy to use. It is fully responsive and works on all devices.",
         image: "/images/projects/iNotebook.png",
         tag: ["All", "Web", "MERN"],
+        githubUrl: "https://github.com/RithendSushanth/iNotebook",
+        deployedUrl: "https://github.com/RithendSushanth/iNotebook",
     },
     {
         id: 5,
@@ -39,6 +47,8 @@ const projectsData = [
         description: "DailyBugle is a news app built with React.js and Node.js. It is designed to be user-friendly and easy to use. It is fully responsive and works on all devices. It is built with newsapi.org API.",
         image: "/images/projects/Dailybugle2.png",
         tag: ["All", "Web", "MERN"],
+        githubUrl: "https://github.com/RithendSushanth/DailyBugle-ReactJs",
+        deployedUrl: "https://github.com/RithendSushanth/DailyBugle-ReactJs",
     },
     {
         id: 6,
@@ -46,6 +56,8 @@ const projectsData = [
         description: "Hype is an ecommerce website built with React.js and Node.js. It is designed to be user-friendly and easy to use. It is fully responsive and works on all devices. Its Payment gateway is built with Razorpay API. Firebase for backend. ",
         image: "/images/pc1.jpg",
         tag: ["All", "Web", "MERN"],
+        githubUrl: "/",
+        deployedUrl: "/",
     },
 ];
 const ProjectsSection = () => {
@@ -115,6 +127,8 @@ const ProjectsSection = () => {
                             title={project.title}
                             description={project.description}
                             imgUrl={project.image}
+                            githubUrl={project.githubUrl}  
+                            deployedUrl={project.deployedUrl}
                         />
                     </motion.li>
                 ))}
