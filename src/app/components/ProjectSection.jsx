@@ -12,7 +12,7 @@ const projectsData = [
         image: "/images/projects/Prompter.png",
         tag: ["All", "Web", "NEXTJS"],
         githubUrl: "https://github.com/RithendSushanth/Prompter",
-        deployedUrl: "https://prompter-7g01ve2py-rithend-sushanths-projects.vercel.app/",
+        deployedUrl: "https://prompter-eta.vercel.app/",
     },
     {
         id: 2,
