@@ -54,7 +54,7 @@ const projectsData = [
         id: 6,
         title: "TechStack Chronicles",
         description: "A personal blog where I share my knowledge and experiences in programming. This platform is designed to help others on their coding journey, featuring tutorials, tips, and insights for developers at all levels.",
-        image: "/images/projects/Techstack-Chronicles.png",
+        image: "/images/projects/TechStack-Chronicles.png",
         tag: ["All", "Web", "NEXTJS"],
         githubUrl: "https://github.com/RithendSushanth/TechStack-Chronicles",
         deployedUrl: "https://techstack-chronicles.vercel.app/", 
