@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
+import { Menu, X, Code } from "lucide-react"
 
 const navLinks = [
   {
@@ -30,6 +31,7 @@ const Navbar = () => {
           href={"/"}
           className="text-2xl md:text-4xl text-white font-semibold"
         >
+          
           Portfolio
         </Link>
         <div className="mobile-menu block md:hidden">

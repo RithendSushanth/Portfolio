@@ -1,381 +1,304 @@
-"use client";
-import React, { useState, useTransition } from "react";
-import Image from "next/image";
-import TabButton from "./TabButton";
-import { Cpu, BookOpen, Award, GraduationCap } from "lucide-react"; // Import icons
-import { DiNodejs, DiDocker, DiJava, DiMongodb, DiPostgresql, DiAws, DiReact, DiJsBadge, DiJenkins, DiAndroid, DiGithubFull } from "react-icons/di"; // Import Devicons
-import { SiExpress, SiNextdotjs } from "react-icons/si";
+// 'use client'
 
-const TAB_DATA = [
-    {
-        title: "Skills",
-        id: "skills",
-        content: (
-            <ul className="grid grid-cols-2 md:grid-cols-4 gap-4 list-none pl-2">
-                <li className="flex items-center py-2">
-                    <DiNodejs className="mr-2 text-green-500 text-4xl" />
-                    <span className="text-xl">Node.js</span>
-                </li>
-                <li className="flex items-center py-2">
-                    <SiExpress className="mr-2 text-gray-500 text-4xl" />
-                    <span className="text-xl">Express</span>
-                </li>
-                <li className="flex items-center py-2">
-                    <SiNextdotjs className="mr-2 text-white text-4xl" />
-                    <span className="text-xl">NextJS</span>
-                </li>
-                <li className="flex items-center py-2">
-                    <DiReact className="mr-2 text-blue-500 text-4xl" />
-                    <span className="text-xl">ReactJS</span>
-                </li>
-                <li className="flex items-center py-2">
-                    <DiPostgresql className="mr-2 text-blue-700 text-4xl" />
-                    <span className="text-xl">PostgreSQL</span>
-                </li>
-                <li className="flex items-center py-2">
-                    <DiDocker className="mr-2 text-blue-600 text-4xl" />
-                    <span className="text-xl">Docker</span>
-                </li>
-                <li className="flex items-center py-2">
-                    <DiJenkins className="mr-2 text-blue-500 text-4xl" />
-                    <span className="text-xl">Jenkins</span>
-                </li>
-                <li className="flex items-center py-2">
-                    <DiAws className="mr-2 text-orange-500 text-4xl" />
-                    <span className="text-xl">AWS</span>
-                </li>
-                <li className="flex items-center py-2">
-                    <DiJava className="mr-2 text-red-600 text-4xl" />
-                    <span className="text-xl">Java</span>
-                </li>
-                <li className="flex items-center py-2">
-                    <DiMongodb className="mr-2 text-green-500 text-4xl" />
-                    <span className="text-xl">MongoDB</span>
-                </li>
-                <li className="flex items-center py-2">
-                    <DiAndroid className="mr-2 text-green-500 text-4xl" />
-                    <span className="text-xl">React Native</span>
-                </li>
-            </ul>
-        ),
-    },
-    {
-        title: "Education",
-        id: "education",
-        content: (
-            <ul className="list-disc pl-2">
-                <li className="flex items-center">
-                    <GraduationCap className="mr-2 text-yellow-700 text-4xl" />
-                    <span className="text-lg">BSc Computer Science: SIES COLLEGE OF ARTS, SCIENCE AND COMMERCE SION (MUMBAI)</span>
-                </li>
-                <br />
-                <li className="flex items-center">
-                    <GraduationCap className="mr-2 text-yellow-700 text-4xl" />
-                    <span className="text-lg">Masters of Computer Application (MCA): SIES COLLEGE OF MANAGEMENT STUDIES, Nerul (MUMBAI)</span>
-                </li>
-            </ul>
-        ),
-    },
-    {
-        title: "Certifications",
-        id: "certifications",
-        content: (
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 list-none pl-2">
-                <li className="flex items-center py-2">
-                    <Award className="mr-2 text-yellow-700 text-4xl" />
-                    <span className="text-xl">AWS Cloud Practitioner</span>
-                </li>
-                <li className="flex items-center py-2">
-                    <Award className="mr-2 text-yellow-700 text-4xl" />
-                    <span className="text-xl">Google Professional Cloud Developer</span>
-                </li>
-                <li className="flex items-center py-2">
-                    <Award className="mr-2 text-yellow-700 text-4xl" />
-                    <span className="text-xl">Postman API Fundamentals Student Expert</span>
-                </li>
-                <li className="flex items-center py-2">
-                    <Award className="mr-2 text-yellow-700 text-4xl" />
-                    <span className="text-xl">Python</span>
-                </li>
-                <li className="flex items-center py-2">
-                    <Award className="mr-2 text-yellow-700 text-4xl" />
-                    <span className="text-xl">Java</span>
-                </li>
-            </ul>
-        ),
-    },
-];
+// import React, { useState } from "react"
+// import Image from "next/image"
+// import { Cpu, BookOpen, Award, GraduationCap } from "lucide-react"
+// import { DiNodejs, DiDocker, DiJava, DiMongodb, DiPostgresql, DiAws, DiReact, DiJenkins, DiAndroid } from "react-icons/di"
+// import { SiExpress, SiNextdotjs } from "react-icons/si"
 
-const AboutSection = () => {
-    const [tab, setTab] = useState("skills");
-    const [isPending, startTransition] = useTransition();
+// const SkillItem = ({ Icon, label, color }) => (
+//     <li className="flex items-center py-2">
+//         <Icon className={`mr-2 text-4xl ${color}`} />
+//         <span className="text-xl">{label}</span>
+//     </li>
+// )
 
-    const handleTabChange = (id) => {
-        startTransition(() => {
-            setTab(id);
-        });
-    };
+// const CertificationItem = ({ title }) => (
+//     <li className="flex items-center py-2">
+//         <Award className="mr-2 text-yellow-500 text-2xl" />
+//         <span className="text-xl">{title}</span>
+//     </li>
+// )
 
-    return (
-        <section className="text-white" id="about">
-            <div className="gap-8 items-center py-8 px-4 xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-16">
-                <Image src="/images/pc1.jpg" width={500} height={500} alt="pcimage" />
-                <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-                    <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
-                    <p className="text-white text-base md:text-lg">
-                    <span className="font-semibold">Hello!</span> I&apos;m a passionate <span className="font-semibold">Software Engineer</span>
-                         specializing in the <span className="text-green-500">MERN stack </span>
-                         and enthusiastic about web and mobile app development. With proficiency in <span className="text-blue-500">Java, JavaScript, and React.js</span>,
-                         I craft dynamic and responsive user interfaces to elevate user experiences.
-                         My journey in software development is driven by a commitment to transforming innovative ideas into 
-                         <span className="font-semibold">practical solutions</span>.
-                         I bring hands-on experience in building scalable and efficient applications with the MERN stack and extend my skills into the DevOps realm with 
-                         <span className="text-blue-400"> Docker</span>,
-                         <span className="text-red-500">Ansible</span>, 
-                         <span className="text-gray-500">Jenkins</span>, and 
-                         <span className="text-orange-400"> AWS cloud services</span>.
-                         Eager to create impactful solutions and collaborate on exciting projects, 
-                         I am continuously expanding my expertise and making meaningful contributions to the tech community. 
-                         <span className="font-semibold"> <br />
-                         Let&apos;s connect and explore the potential to build something extraordinary together!</span>
-                    </p>
-                    <div className="flex flex-row justify-start mt-8 gap-4">
-                        <TabButton
-                            selectTab={() => handleTabChange("skills")}
-                            active={tab === "skills"}
-                        >
-                            <Cpu className="mr-2" /> Skills
-                        </TabButton>
-                        <TabButton
-                            selectTab={() => handleTabChange("education")}
-                            active={tab === "education"}
-                        >
-                            <BookOpen className="mr-2" /> Education
-                        </TabButton>
-                        <TabButton
-                            selectTab={() => handleTabChange("certifications")}
-                            active={tab === "certifications"}
-                        >
-                            <Award className="mr-2" /> Certifications
-                        </TabButton>
-                    </div>
-                    <div className="mt-8">
-                        {TAB_DATA.find((t) => t.id === tab).content}
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
-};
-
-export default AboutSection;
-
-
-// "use client";
-// import React, { useState, useTransition } from "react";
-// import Image from "next/image";
-// import TabButton from "./TabButton";
-// import { Cpu, BookOpen, Award, GraduationCap } from "lucide-react"; // Import icons
-// import { DiNodejs, DiDocker, DiJava, DiMongodb, DiPostgresql, DiAws, DiReact, DiJenkins, DiAndroid } from "react-icons/di"; // Import Devicons
-// import { SiExpress, SiNextdotjs } from "react-icons/si";
-// import { motion } from "framer-motion";
+// const EducationItem = ({ degree, institution }) => (
+//     <li className="mb-4">
+//         <div className="flex items-center">
+//             <GraduationCap className="mr-2 text-yellow-500 text-2xl flex-shrink-0" />
+//             <div>
+//                 <h4 className="text-xl font-medium">{degree}</h4>
+//                 <p className="text-lg text-gray-300">{institution}</p>
+//             </div>
+//         </div>
+//     </li>
+// )
 
 // const TAB_DATA = [
 //     {
 //         title: "Skills",
 //         id: "skills",
+//         icon: Cpu,
 //         content: (
-//             <ul className="grid grid-cols-2 md:grid-cols-3 gap-4 list-none p-4 bg-gray-800 rounded-lg shadow-md">
-//                 <li className="flex items-center p-2 bg-gray-900 rounded-md">
-//                     <DiNodejs className="mr-2 text-green-500 text-4xl" />
-//                     <span className="text-lg font-medium">Node.js</span>
-//                 </li>
-//                 <li className="flex items-center p-2 bg-gray-900 rounded-md">
-//                     <SiExpress className="mr-2 text-gray-500 text-4xl" />
-//                     <span className="text-lg font-medium">Express</span>
-//                 </li>
-//                 <li className="flex items-center p-2 bg-gray-900 rounded-md">
-//                     <SiNextdotjs className="mr-2 text-white text-4xl" />
-//                     <span className="text-lg font-medium">NextJS</span>
-//                 </li>
-//                 <li className="flex items-center p-2 bg-gray-900 rounded-md">
-//                     <DiReact className="mr-2 text-blue-500 text-4xl" />
-//                     <span className="text-lg font-medium">ReactJS</span>
-//                 </li>
-//                 <li className="flex items-center p-2 bg-gray-900 rounded-md">
-//                     <DiPostgresql className="mr-2 text-blue-700 text-4xl" />
-//                     <span className="text-lg font-medium">PostgreSQL</span>
-//                 </li>
-//                 <li className="flex items-center p-2 bg-gray-900 rounded-md">
-//                     <DiDocker className="mr-2 text-blue-600 text-4xl" />
-//                     <span className="text-lg font-medium">Docker</span>
-//                 </li>
-//                 <li className="flex items-center p-2 bg-gray-900 rounded-md">
-//                     <DiJenkins className="mr-2 text-blue-500 text-4xl" />
-//                     <span className="text-lg font-medium">Jenkins</span>
-//                 </li>
-//                 <li className="flex items-center p-2 bg-gray-900 rounded-md">
-//                     <DiAws className="mr-2 text-orange-500 text-4xl" />
-//                     <span className="text-lg font-medium">AWS</span>
-//                 </li>
-//                 <li className="flex items-center p-2 bg-gray-900 rounded-md">
-//                     <DiJava className="mr-2 text-red-600 text-4xl" />
-//                     <span className="text-lg font-medium">Java</span>
-//                 </li>
-//                 <li className="flex items-center p-2 bg-gray-900 rounded-md">
-//                     <DiMongodb className="mr-2 text-green-500 text-4xl" />
-//                     <span className="text-lg font-medium">MongoDB</span>
-//                 </li>
-//                 <li className="flex items-center p-2 bg-gray-900 rounded-md">
-//                     <DiAndroid className="mr-2 text-green-500 text-4xl" />
-//                     <span className="text-lg font-medium">React Native</span>
-//                 </li>
+//             <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 list-none pl-0">
+//                 <SkillItem Icon={DiNodejs} label="Node.js" color="text-green-500" />
+//                 <SkillItem Icon={SiExpress} label="Express" color="text-gray-500" />
+//                 <SkillItem Icon={SiNextdotjs} label="Next.js" color="text-white" />
+//                 <SkillItem Icon={DiReact} label="React" color="text-blue-500" />
+//                 <SkillItem Icon={DiPostgresql} label="PostgreSQL" color="text-blue-700" />
+//                 <SkillItem Icon={DiDocker} label="Docker" color="text-blue-600" />
+//                 <SkillItem Icon={DiJenkins} label="Jenkins" color="text-blue-500" />
+//                 <SkillItem Icon={DiAws} label="AWS" color="text-orange-500" />
+//                 <SkillItem Icon={DiJava} label="Java" color="text-red-600" />
+//                 <SkillItem Icon={DiMongodb} label="MongoDB" color="text-green-500" />
+//                 <SkillItem Icon={DiAndroid} label="React Native" color="text-green-500" />
 //             </ul>
 //         ),
 //     },
 //     {
 //         title: "Education",
 //         id: "education",
+//         icon: BookOpen,
 //         content: (
-//             <ul className="list-none p-4 bg-gray-800 rounded-lg shadow-md">
-//                 <li className="flex items-center p-2 bg-gray-900 rounded-md mb-2">
-//                     <GraduationCap className="mr-2 text-yellow-700 text-4xl" />
-//                     <span className="text-lg font-medium">BSc Computer Science: SIES COLLEGE OF ARTS, SCIENCE AND COMMERCE SION (MUMBAI)</span>
-//                 </li>
-//                 <li className="flex items-center p-2 bg-gray-900 rounded-md">
-//                     <GraduationCap className="mr-2 text-yellow-700 text-4xl" />
-//                     <span className="text-lg font-medium">Masters of Computer Application (MCA): SIES COLLEGE OF MANAGEMENT STUDIES, Nerul (MUMBAI)</span>
-//                 </li>
+//             <ul className="list-none pl-0">
+//                 <EducationItem
+//                     degree="Masters of Computer Application (MCA)"
+//                     institution="SIES COLLEGE OF MANAGEMENT STUDIES, Nerul (MUMBAI)"
+//                 />
+//                 <EducationItem
+//                     degree="BSc Computer Science"
+//                     institution="SIES COLLEGE OF ARTS, SCIENCE AND COMMERCE SION (MUMBAI)"
+//                 />
 //             </ul>
 //         ),
 //     },
 //     {
 //         title: "Certifications",
 //         id: "certifications",
+//         icon: Award,
 //         content: (
-//             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 list-none p-4 bg-gray-800 rounded-lg shadow-md">
-//                 <li className="flex items-center p-2 bg-gray-900 rounded-md">
-//                     <Award className="mr-2 text-yellow-700 text-4xl" />
-//                     <span className="text-lg font-medium">AWS Cloud Practitioner</span>
-//                 </li>
-//                 <li className="flex items-center p-2 bg-gray-900 rounded-md">
-//                     <Award className="mr-2 text-yellow-700 text-4xl" />
-//                     <span className="text-lg font-medium">Google Professional Cloud Developer</span>
-//                 </li>
-//                 <li className="flex items-center p-2 bg-gray-900 rounded-md">
-//                     <Award className="mr-2 text-yellow-700 text-4xl" />
-//                     <span className="text-lg font-medium">Postman API Fundamentals Student Expert</span>
-//                 </li>
-//                 <li className="flex items-center p-2 bg-gray-900 rounded-md">
-//                     <Award className="mr-2 text-yellow-700 text-4xl" />
-//                     <span className="text-lg font-medium">Python</span>
-//                 </li>
-//                 <li className="flex items-center p-2 bg-gray-900 rounded-md">
-//                     <Award className="mr-2 text-yellow-700 text-4xl" />
-//                     <span className="text-lg font-medium">Java</span>
-//                 </li>
+//             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 list-none pl-0">
+//                 <CertificationItem title="AWS Cloud Practitioner" />
+//                 <CertificationItem title="Google Professional Cloud Developer" />
+//                 <CertificationItem title="Postman API Fundamentals Student Expert" />
+//                 <CertificationItem title="Python" />
+//                 <CertificationItem title="Java" />
 //             </ul>
 //         ),
 //     },
-// ];
+// ]
 
-// const AboutSection = () => {
-//     const [tab, setTab] = useState("skills");
-//     const [isPending, startTransition] = useTransition();
-
-//     const handleTabChange = (id) => {
-//         startTransition(() => {
-//             setTab(id);
-//         });
-//     };
+// const TabButton = ({ active, selectTab, children }) => {
+//     const buttonClasses = active
+//         ? "text-white border-b border-purple-500"
+//         : "text-[#ADB7BE] hover:text-white"
 
 //     return (
-//         <section className="text-white py-12" id="about">
-//             <div className="container mx-auto flex flex-col md:flex-row gap-12 items-start px-4 md:px-0">
-//                 <motion.div
-//                     className="md:w-1/2 flex justify-center"
-//                     initial={{ opacity: 0, scale: 0.9 }}
-//                     animate={{ opacity: 1, scale: 1 }}
-//                     transition={{ duration: 0.5 }}
-//                 >
-//                     <Image
-//                         src="/images/pc2.jpg"
-//                         width={500}
-//                         height={500}
-//                         alt="pcimage"
-//                         className="rounded-lg shadow-lg"
-//                     />
-//                 </motion.div>
-//                 <div className="md:w-1/2 flex flex-col">
-//                     <motion.h2
-//                         className="text-5xl font-extrabold mb-6"
-//                         initial={{ opacity: 0, y: -20 }}
-//                         animate={{ opacity: 1, y: 0 }}
-//                         transition={{ duration: 0.5 }}
-//                     >
-//                         About Me
-//                     </motion.h2>
-//                     <motion.p
-//                         className="text-base md:text-lg leading-relaxed mb-8 bg-gray-800 p-6 rounded-lg shadow-lg"
-//                         initial={{ opacity: 0, y: 20 }}
-//                         animate={{ opacity: 1, y: 0 }}
-//                         transition={{ duration: 0.5 }}
-//                     >
-//                         <span className="font-semibold">Hello!</span> I&apos;m a passionate <span className="font-semibold">Software Engineer</span>
-//                         specializing in the <span className="text-green-500">MERN stack</span>
-//                         and enthusiastic about web and mobile app development. With proficiency in <span className="text-blue-500">Java, JavaScript, and React.js</span>,
-//                         I craft dynamic and responsive user interfaces to elevate user experiences.
-//                         My journey in software development is driven by a commitment to transforming innovative ideas into 
-//                         <span className="font-semibold">practical solutions</span>.
-//                         I bring hands-on experience in building scalable and efficient applications with the MERN stack and extend my skills into the DevOps realm with 
-//                         <span className="text-blue-400">Docker</span>,
-//                         <span className="text-red-500">Ansible</span>, 
-//                         <span className="text-gray-500">Jenkins</span>, and 
-//                         <span className="text-orange-400">AWS cloud services</span>.
-//                         Eager to create impactful solutions and collaborate on exciting projects, 
-//                         I am continuously expanding my expertise and making meaningful contributions to the tech community. 
-//                         <span className="font-semibold"> <br />
-//                         Let&apos;s connect and explore the potential to build something extraordinary together!</span>
-//                     </motion.p>
+//         <button onClick={selectTab} className={`mr-3 font-semibold hover:text-white ${buttonClasses}`}>
+//             {children}
+//         </button>
+//     )
+// }
 
-//                     <motion.div
-//                         className="flex space-x-4 mb-8"
-//                         initial={{ opacity: 0, y: 20 }}
-//                         animate={{ opacity: 1, y: 0 }}
-//                         transition={{ duration: 0.5 }}
-//                     >
-//                         <TabButton
-//                             selectTab={() => handleTabChange("skills")}
-//                             active={tab === "skills"}
-//                         >
-//                             <Cpu className="mr-2" /> Skills
-//                         </TabButton>
-//                         <TabButton
-//                             selectTab={() => handleTabChange("education")}
-//                             active={tab === "education"}
-//                         >
-//                             <BookOpen className="mr-2" /> Education
-//                         </TabButton>
-//                         <TabButton
-//                             selectTab={() => handleTabChange("certifications")}
-//                             active={tab === "certifications"}
-//                         >
-//                             <Award className="mr-2" /> Certifications
-//                         </TabButton>
-//                     </motion.div>
+// export default function AboutSection() {
+//     const [activeTab, setActiveTab] = useState("skills")
 
-//                     <motion.div
-//                         className="bg-gray-800 p-4 rounded-lg shadow-lg"
-//                         initial={{ opacity: 0 }}
-//                         animate={{ opacity: 1 }}
-//                         transition={{ duration: 0.5 }}
-//                     >
-//                         {TAB_DATA.find(({ id }) => id === tab)?.content}
-//                     </motion.div>
+//     return (
+//         <section className="text-white" id="about">
+//             <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
+//                 <Image src="/images/pc1.jpg" width={500} height={500} alt="Computer setup" className="rounded-lg" />
+//                 <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
+//                     <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
+//                     <p className="text-muted-foreground mb-6">
+//                         Hello! I'm a passionate <span className="font-semibold text-gray-600">Software Engineer</span> specializing
+//                         in the <span className="text-green-500">MERN stack</span> and enthusiastic about web and mobile app
+//                         development. With proficiency in <span className="text-blue-500">Java, JavaScript, and React.js</span>, I
+//                         craft dynamic and responsive user interfaces to elevate user experiences. My journey in software
+//                         development is driven by a commitment to transforming innovative ideas into{" "}
+//                         <span className="font-semibold">practical solutions</span>. I bring hands-on experience in building
+//                         scalable and efficient applications with the MERN stack and extend my skills into the DevOps realm with{" "}
+//                         <span className="text-blue-400">Docker</span>, <span className="text-red-500">Ansible</span>,{" "}
+//                         <span className="text-gray-500">Jenkins</span>, and{" "}
+//                         <span className="text-orange-400">AWS cloud services</span>. Eager to create impactful solutions and
+//                         collaborate on exciting projects, I am continuously expanding my expertise and making meaningful
+//                         contributions to the tech community.
+//                     </p>
+//                     <p className="font-semibold mb-8">
+//                         Let's connect and explore the potential to build something extraordinary together!
+//                     </p>
+
+//                     <div className="flex flex-row justify-start mt-8">
+//                         {TAB_DATA.map((tab) => (
+//                             <TabButton
+//                                 key={tab.id}
+//                                 selectTab={() => setActiveTab(tab.id)}
+//                                 active={activeTab === tab.id}
+//                             >
+//                                 <tab.icon className="mr-2 inline-block" /> {tab.title}
+//                             </TabButton>
+//                         ))}
+//                     </div>
+//                     <div className="mt-8">
+//                         {TAB_DATA.find((t) => t.id === activeTab).content}
+//                     </div>
 //                 </div>
 //             </div>
 //         </section>
-//     );
-// };
+//     )
+// }
 
-// export default AboutSection;
+
+'use client'
+
+import React, { useState } from "react"
+import Image from "next/image"
+import { Cpu, BookOpen, Award, GraduationCap } from "lucide-react"
+import { FaAward } from "react-icons/fa";
+import { DiNodejs, DiDocker, DiJava, DiMongodb, DiPostgresql, DiAws, DiReact, DiJenkins, DiAndroid } from "react-icons/di"
+import { AiOutlineKubernetes } from "react-icons/ai";
+import { SiExpress, SiNextdotjs } from "react-icons/si"
+
+const SkillItem = ({ Icon, label, color }) => (
+  <div className="transform hover:scale-105 transition-all duration-300 group">
+    <div className="flex items-center gap-3">
+      <Icon className={`text-4xl ${color} group-hover:scale-110 transition-transform duration-300`} />
+      <span className="text-base font-medium text-gray-300 group-hover:text-white transition-colors duration-300">{label}</span>
+    </div>
+  </div>
+)
+
+const CertificationItem = ({ title }) => (
+  <div className="transform hover:translate-x-2 transition-all duration-300 group">
+    <div className="flex items-center gap-4">
+      <FaAward className="text-yellow-500 text-2xl group-hover:scale-110 transition-transform duration-300" />
+      <div>
+        <h4 className="text-lg font-medium text-gray-200 group-hover:text-white transition-colors duration-300">{title}</h4>
+        <p className="text-sm text-gray-400">Verified Certificate</p>
+      </div>
+    </div>
+  </div>
+)
+
+const EducationItem = ({ degree, institution }) => (
+  <div className="transform hover:translate-x-2 transition-all duration-300 group">
+    <div className="flex items-center gap-4">
+      <GraduationCap className="text-blue-500 text-2xl group-hover:scale-110 transition-transform duration-300" />
+      <div>
+        <h4 className="text-lg font-medium text-gray-200 group-hover:text-white transition-colors duration-300">{degree}</h4>
+        <p className="text-sm text-gray-400">{institution}</p>
+      </div>
+    </div>
+  </div>
+)
+
+const TAB_DATA = [
+  {
+    title: "Skills",
+    id: "skills",
+    icon: Cpu,
+    content: (
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <SkillItem Icon={DiNodejs} label="Node.js" color="text-green-500" />
+        <SkillItem Icon={SiExpress} label="Express" color="text-gray-400" />
+        <SkillItem Icon={SiNextdotjs} label="Next.js" color="text-white" />
+        <SkillItem Icon={DiReact} label="React" color="text-blue-500" />
+        <SkillItem Icon={DiPostgresql} label="PostgreSQL" color="text-blue-700" />
+        <SkillItem Icon={DiDocker} label="Docker" color="text-blue-600" />
+        <SkillItem Icon={DiJenkins} label="Jenkins" color="text-red-800" />
+        <SkillItem Icon={DiAws} label="AWS" color="text-orange-500" />
+        <SkillItem Icon={DiJava} label="Java" color="text-red-600" />
+        <SkillItem Icon={DiMongodb} label="MongoDB" color="text-green-500" />
+        <SkillItem Icon={DiAndroid} label="React Native" color="text-green-500" />
+        <SkillItem Icon={AiOutlineKubernetes} label={"Kubernetes"} color="text-blue-500" />
+      </div>
+    ),
+  },
+  {
+    title: "Education",
+    id: "education",
+    icon: BookOpen,
+    content: (
+      <div className="space-y-6">
+        <EducationItem
+          degree="Masters of Computer Application (MCA)"
+          institution="SIES COLLEGE OF MANAGEMENT STUDIES, Nerul (MUMBAI)"
+        />
+        <EducationItem
+          degree="BSc Computer Science"
+          institution="SIES COLLEGE OF ARTS, SCIENCE AND COMMERCE SION (MUMBAI)"
+        />
+      </div>
+    ),
+  },
+  {
+    title: "Certifications",
+    id: "certifications",
+    icon: Award,
+    content: (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <CertificationItem title="AWS Cloud Practitioner" />
+        <CertificationItem title="Google Professional Cloud Developer" />
+        <CertificationItem title="Postman API Fundamentals Student Expert" />
+        <CertificationItem title="Python" />
+        <CertificationItem title="Java" />
+      </div>
+    ),
+  },
+]
+
+const TabButton = ({ active, selectTab, children }) => {
+  const buttonClasses = active
+    ? "text-white border-b-2 border-purple-500 pb-2"
+    : "text-[#ADB7BE] hover:text-white border-b-2 border-transparent pb-2 transition-all duration-300"
+
+  return (
+    <button onClick={selectTab} className={`mr-8 font-semibold ${buttonClasses}`}>
+      {children}
+    </button>
+  )
+}
+
+export default function AboutSection() {
+  const [activeTab, setActiveTab] = useState("skills")
+
+  return (
+    <section className="text-white" id="about">
+      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
+        <Image src="/images/pc1.jpg" width={500} height={500} alt="Computer setup" className="rounded-lg shadow-2xl" />
+        <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
+          <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
+          <p className="text-muted-foreground mb-6">
+            Hello! I'm a passionate <span className="font-semibold text-gray-300">Software Engineer</span> specializing
+            in the <span className="text-green-500">MERN stack</span> and enthusiastic about web and mobile app
+            development. With proficiency in <span className="text-blue-500">Java, JavaScript, and React.js</span>, I
+            craft dynamic and responsive user interfaces to elevate user experiences.
+          </p>
+          <p className="text-muted-foreground mb-6">
+            My journey in software development is driven by a commitment to transforming innovative ideas into{" "}
+            <span className="font-semibold text-gray-300">practical solutions</span>. I bring hands-on experience in building
+            scalable and efficient applications with the MERN stack and extend my skills into the DevOps realm with{" "}
+            <span className="text-blue-400">Docker</span>, <span className="text-red-500">Ansible</span>,{" "}
+            <span className="text-gray-400">Jenkins</span>, and{" "}
+            <span className="text-orange-400">AWS cloud services</span>.
+          </p>
+          <p className="font-medium text-purple-400 mb-8">
+            Let's connect and explore the potential to build something extraordinary together!
+          </p>
+
+          <div className="flex flex-row justify-start mt-8">
+            {TAB_DATA.map((tab) => (
+              <TabButton
+                key={tab.id}
+                selectTab={() => setActiveTab(tab.id)}
+                active={activeTab === tab.id}
+              >
+                <tab.icon className="mr-2 inline-block" /> {tab.title}
+              </TabButton>
+            ))}
+          </div>
+          <div className="mt-8">
+            {TAB_DATA.find((t) => t.id === activeTab).content}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
