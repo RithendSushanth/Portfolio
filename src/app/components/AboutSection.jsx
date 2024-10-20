@@ -1,4 +1,4 @@
-// 'use client'
+"use client";
 
 // import React, { useState } from "react"
 // import Image from "next/image"
@@ -108,7 +108,7 @@
 //                 <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
 //                     <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
 //                     <p className="text-muted-foreground mb-6">
-//                         Hello! I'm a passionate <span className="font-semibold text-gray-600">Software Engineer</span> specializing
+//                         Hello! I&apos;m a passionate <span className="font-semibold text-gray-600">Software Engineer</span> specializing
 //                         in the <span className="text-green-500">MERN stack</span> and enthusiastic about web and mobile app
 //                         development. With proficiency in <span className="text-blue-500">Java, JavaScript, and React.js</span>, I
 //                         craft dynamic and responsive user interfaces to elevate user experiences. My journey in software
@@ -122,7 +122,7 @@
 //                         contributions to the tech community.
 //                     </p>
 //                     <p className="font-semibold mb-8">
-//                         Let's connect and explore the potential to build something extraordinary together!
+//                         Let&apos;s connect and explore the potential to build something extraordinary together!
 //                     </p>
 
 //                     <div className="flex flex-row justify-start mt-8">
@@ -146,7 +146,7 @@
 // }
 
 
-'use client'
+"use client";
 
 import React, { useState } from "react"
 import Image from "next/image"
@@ -266,7 +266,7 @@ export default function AboutSection() {
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-muted-foreground mb-6">
-            Hello! I'm a passionate <span className="font-semibold text-gray-300">Software Engineer</span> specializing
+            Hello! I&apos;m a passionate <span className="font-semibold text-gray-300">Software Engineer</span> specializing
             in the <span className="text-green-500">MERN stack</span> and enthusiastic about web and mobile app
             development. With proficiency in <span className="text-blue-500">Java, JavaScript, and React.js</span>, I
             craft dynamic and responsive user interfaces to elevate user experiences.
@@ -280,7 +280,7 @@ export default function AboutSection() {
             <span className="text-orange-400">AWS cloud services</span>.
           </p>
           <p className="font-medium text-purple-400 mb-8">
-            Let's connect and explore the potential to build something extraordinary together!
+            Let&apos;s connect and explore the potential to build something extraordinary together!
           </p>
 
           <div className="flex flex-row justify-start mt-8">

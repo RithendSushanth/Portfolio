@@ -151,6 +151,7 @@ import { Code2, Eye, Github } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import Image from "next/image"
 
 const projectsData = [
   {
@@ -215,7 +216,7 @@ const ProjectCard = ({ project }) => {
       <Card className="overflow-hidden bg-[#181818] border-gray-700">
         <CardHeader className="p-0">
           <div className="relative aspect-video overflow-hidden">
-            <img
+            <Image
               src={project.image}
               alt={project.title}
               className="object-cover w-full h-full transition-transform duration-300 hover:scale-110"
